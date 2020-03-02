@@ -22,6 +22,7 @@ namespace day_5_exercise_acronym
             for (int i = 0; i < wordsFromTerm.Length; i++)
             {
                 acronym += wordsFromTerm[i][0];
+                Console.WriteLine("ASCII value of " + wordsFromTerm[i][0] + ": " + (int)wordsFromTerm[i][0]);
             }
             acronym = acronym.ToUpper();
             Console.WriteLine("Your acronym is: " + acronym);
