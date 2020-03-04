@@ -6,12 +6,12 @@ namespace RockPaperScissors
 {
     class RockPaperScissorsGame
     {
-        List<string> history = new List<string>();
+        List<Round> history = new List<Round>();
         int wins, losses, ties;
 
         public void PlayRound()
         {   
-            int roundNum = wins + losses + ties + 1;
+            int roundNum = history.Count + 1;
             Console.Write("Round " + roundNum + "! Rock, Paper, or Scissors? (r/p/s): ");
             string input = Console.ReadLine();
             string compMove = DecideMove();
@@ -19,44 +19,46 @@ namespace RockPaperScissors
             if(input == compMove)
             {
                 Console.WriteLine("It's a tie!");
-                ties++;
-                history.Add(input + "\t" + compMove + "\tTie");
+                history.Add(new Round(input, compMove, "Tie"));
             }
-            else if(input == "r" && compMove == "p")
+            else if(input == "r")
             {
-                Console.WriteLine("You lost! Rock loses to paper.");
-                losses++;
-                history.Add(input + "\t" + compMove + "\tLoss");
+                if(compMove == "s")
+                {
+                    Console.WriteLine("You win! Rock beats scissors.");
+                    history.Add(new Round(input, compMove, "Win"));
+                }
+                else
+                {
+                    Console.WriteLine("You lost! Rock loses to paper.");
+                    history.Add(new Round(input, compMove, "Loss"));
+                }
             }
-            else if(input == "r" && compMove == "s")
+            else if(input == "p")
             {
-                Console.WriteLine("You win! Rock beats scissors.");
-                wins++;
-                history.Add(input + "\t" + compMove + "\tWin");
+                if(compMove == "r")
+                {
+                    Console.WriteLine("You win! Paper beats rock.");
+                    history.Add(new Round(input, compMove, "Win"));
+                }
+                else
+                {
+                    Console.WriteLine("You lost! Paper loses to scissors.");
+                    history.Add(new Round(input, compMove, "Loss"));
+                }
             }
-            else if(input == "p" && compMove == "r")
+            else if(input == "s")
             {
-                Console.WriteLine("You win! Paper beats rock.");
-                wins++;
-                history.Add(input + "\t" + compMove + "\tWin");
-            }
-            else if(input == "p" && compMove == "s")
-            {
-                Console.WriteLine("You lost! Paper loses to scissors.");
-                losses++;
-                history.Add(input + "\t" + compMove + "\tLoss");
-            }
-            else if(input == "s" && compMove == "r")
-            {
-                Console.WriteLine("You lost! Scissors loses to rock.");
-                losses++;
-                history.Add(input + "\t" + compMove + "\tLoss");
-            }
-            else if(input == "s" && compMove == "p")
-            {
-                Console.WriteLine("You win! Scissors beats paper.");
-                wins++;
-                history.Add(input + "\t" + compMove + "\tWin");
+                if(compMove == "p")
+                {
+                    Console.WriteLine("You win! Scissors beats paper.");
+                    history.Add(new Round(input, compMove, "Win"));
+                }
+                else
+                {
+                    Console.WriteLine("You lost! Scissors loses to rock.");
+                    history.Add(new Round(input, compMove, "Loss"));
+                }
             }
             else
             {
@@ -77,17 +79,30 @@ namespace RockPaperScissors
         }
 
         public void PrintSummary(){
-            int rounds = wins + losses + ties;
-            Console.WriteLine("You played " + rounds + " rounds. Here are the results.");
-            Console.WriteLine("Wins " + wins + ", Losses " + losses + ", Ties " + ties);
+            Console.WriteLine("You played " + history.Count + " rounds. Here are the results.");
+            int[] scores = Round.getScores();
+            Console.WriteLine("Wins " + scores[0] + ", Losses " + scores[1] + ", Ties " + scores[2]);
+            if(scores[0] == scores[1])
+            {
+                Console.WriteLine("The game's a tie!");
+            }
+            else if(scores[0] > scores[1])
+            {
+                Console.WriteLine("You are the winner!");
+            }
+            else
+            {
+                Console.WriteLine("You lose! You win nothing! Good day, sir!");
+            }
             Console.WriteLine("*-------------------------------*");
             Console.WriteLine("|\tYou\tCP\tResult\t|");
             Console.WriteLine("*-------------------------------*");
-            foreach(string record in history)
+            foreach(Round record in history)
             {
-                Console.WriteLine("|\t" + record + "\t|");
+                Console.WriteLine("|\t" + record.toString() + "\t|");
             }
             Console.WriteLine("*-------------------------------*");
+            int winner = Math.Max(scores[0], scores[1]);
             Console.WriteLine("Thank you for playing!");
         }
     }
