@@ -1,9 +1,8 @@
-﻿using RockPaperScissors.Library;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace RockPaperScissors.App
+namespace RockPaperScissors.Library
 {
     class RpsRandomStrategy : IRpsStrategy
     {
@@ -15,8 +14,7 @@ namespace RockPaperScissors.App
             // 0 = Rock
             // 1 = Paper
             // 2 = Scissors
-            string randomMove = correspondingResults[random.Next(0, 2)];
-            return randomMove;
+            return correspondingResults[random.Next(0, 3)];
         }
     }
 }

@@ -1,9 +1,8 @@
-﻿using RockPaperScissors.Library;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace RockPaperScissors.App
+namespace RockPaperScissors.Library
 {
     class RpsSmartStrategy : IRpsStrategy
     {
