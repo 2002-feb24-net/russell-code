@@ -49,8 +49,13 @@ namespace PersonList
                 Person personAtIndex = myPeople[i];
                 for (int j = 0; j < i; j++)
                 {
+                    // Person.ToString() return the name of that person.
+                    // Essentially testing if( personAtIndex < mypeople[j] )
                     if(personAtIndex.ToString().CompareTo(myPeople[j].ToString()) < 0)
                     {
+                        // When we have found the new index for personAtIndex,
+                        // remove that person from its original index,
+                        // then insert them at their new index.
                         myPeople.Remove(personAtIndex);
                         myPeople.Insert(j, personAtIndex);
                         break;
