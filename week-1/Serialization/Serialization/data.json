@@ -1,0 +1,38 @@
+[
+  {
+    "Id": 6,
+    "Name": "Russell",
+    "Children": [
+    ]
+  },
+  {
+    "Id": 5,
+    "Name": "Nick",
+    "Children": [
+    ]
+  },
+  {
+    "Id": 1,
+    "Name": "Mark",
+    "Children": [
+      {
+        "Id": 2,
+        "Name": "Ethan",
+        "Children": [
+        ]
+      },
+      {
+        "Id": 3,
+        "Name": "Hope",
+        "Children": [
+        ]
+      },
+      {
+        "Id": 4,
+        "Name": "Maya",
+        "Children": [
+        ]
+      }
+    ]
+  }
+]
