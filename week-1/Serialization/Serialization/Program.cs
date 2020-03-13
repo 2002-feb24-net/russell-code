@@ -40,10 +40,21 @@ namespace Serialization
 
         private static void WriteToFile(string text, string path)
         {
-            var file = new FileStream(path, FileMode.Create);
-            byte[] data = Encoding.UTF8.GetBytes(text);
-            file.Write(data);
-            file.Close();
+            try
+            {
+                var file = new FileStream(path, FileMode.Create);
+                byte[] data = Encoding.UTF8.GetBytes(text);
+                file.Write(data);
+                file.Close();
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                // useful proprties of exceptions:
+                // Message, StackTrace, InnerException
+                Console.WriteLine($"Access to file {path} is not allowed by the OS.");
+                Console.WriteLine(ex.Message);
+                throw; // rethrows the exception
+            }
         }
 
         private static string ReadFromFile(string path)
