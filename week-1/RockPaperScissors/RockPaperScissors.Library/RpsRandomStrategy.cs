@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RockPaperScissors.Library
 {
-    class RpsRandomStrategy : IRpsStrategy
+    public class RpsRandomStrategy : IRpsStrategy
     {
         public string DecideMove(string playerLastMove)
         {

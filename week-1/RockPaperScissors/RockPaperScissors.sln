@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissors.App", "RockPaperScissors.App\RockPaperScissors.App.csproj", "{2B6C3B69-091E-4357-826C-5D50AE92D86A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockPaperScissors.App", "RockPaperScissors.App\RockPaperScissors.App.csproj", "{2B6C3B69-091E-4357-826C-5D50AE92D86A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissors.Library", "RockPaperScissors.Library\RockPaperScissors.Library.csproj", "{8E2D54D7-8FA4-43C9-9159-6276ED8D5A23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockPaperScissors.Library", "RockPaperScissors.Library\RockPaperScissors.Library.csproj", "{8E2D54D7-8FA4-43C9-9159-6276ED8D5A23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissors.SpanishApp", "RockPaperScissors.SpanishApp\RockPaperScissors.SpanishApp.csproj", "{DE3EF33E-0030-4720-9CCA-EABCE1E34B8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockPaperScissors.SpanishApp", "RockPaperScissors.SpanishApp\RockPaperScissors.SpanishApp.csproj", "{DE3EF33E-0030-4720-9CCA-EABCE1E34B8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestRPS", "XUnitTestRPS\XUnitTestRPS.csproj", "{F218C822-9C6A-4DB3-BBEC-56B88C3FE8DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{DE3EF33E-0030-4720-9CCA-EABCE1E34B8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE3EF33E-0030-4720-9CCA-EABCE1E34B8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE3EF33E-0030-4720-9CCA-EABCE1E34B8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F218C822-9C6A-4DB3-BBEC-56B88C3FE8DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F218C822-9C6A-4DB3-BBEC-56B88C3FE8DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F218C822-9C6A-4DB3-BBEC-56B88C3FE8DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F218C822-9C6A-4DB3-BBEC-56B88C3FE8DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
